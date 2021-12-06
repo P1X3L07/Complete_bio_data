@@ -11,16 +11,18 @@ namespace Complete_bio_data
         static void Main(string[] args)
         {
 
-            Console.Write("Berapa data = ");
-            int data = Convert.ToInt32(Console.ReadLine());
-
             bool repeat = true;
             int counter = 1;
             int status = 1;
             while(repeat = true)
             {
+                Console.Write("Berapa data = ");
+                int data = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine();
+
                 string[,] info = new string[data, 6];
-                for(int i = 0; i < data; i++)
+
+                for (int i = 0; i < data; i++)
                 {
                     Console.WriteLine($"data ke - { i + status}");
 
@@ -57,13 +59,13 @@ namespace Complete_bio_data
                 {
                     Console.Clear();
                     var sb = new System.Text.StringBuilder();
-                    sb.Append(String.Format("{0,-4} | {1,-5} | {2,-20} | {3,15} | {4, 20} | {5, 12} | {6, 4}", "NO",
+                    sb.Append(String.Format("{0,-4} | {1,-5} | {2,-20} | {3,15} | {4, 20} | {5, 15} | {6, 4}", "NO",
                     "NIM", "NAMA", "JENIS KELAMIN", "TAHUN MASUK", "PROGRAM STUDI", "KELAS\n"));
                     Console.WriteLine();
 
                     for (int i = 0; i < data; i++)
                     {
-                        sb.Append(String.Format("{0,-4} | {1,-5} | {2,-20} | {3,15} | {4, 20},| {5, 12} | {6, 4}", (i + status),
+                        sb.Append(String.Format("{0,-4} | {1,-5} | {2,-20} | {3,15} | {4, 20} | {5, 15} | {6, 4}", (i + status),
                         info[i,0],info[i,1], info[i,2], info[i,3], info[i,4], info[i,5] + "\n"));
                     }
                     Console.Write(sb);
